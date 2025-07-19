@@ -8,7 +8,7 @@ spring:
 # SonarCloud Configuration
 sonarcloud:
   base-url: https://sonarcloud.io/api
-  token: ${SONARCLOUD_TOKEN:08d278c00054753e6029c2233643e212a7fbfb54}
+  token: ${SONARCLOUD_TOKEN:YOUR SONAR TOKEN}
   organization: ${SONARCLOUD_ORG:commerceiq}
 
   # Product to Project Mapping
@@ -53,7 +53,7 @@ sonarcloud:
 # Snyk Configuration
 snyk:
   base-url: https://api.snyk.io
-  token: ${SNYK_TOKEN:f9fab0d6-413b-439c-8673-38ec709a410a}
+  token: ${SNYK_TOKEN:Your Snyk Token Here}
   organization: ${SNYK_ORG:240e61d6-487d-4d0d-af5c-0c0bc1ce57a0}
   api-version: 2024-06-21
 
