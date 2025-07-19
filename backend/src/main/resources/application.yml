@@ -1,0 +1,78 @@
+spring:
+  application:
+    name: sonarcloud-metrics
+
+  thymeleaf:
+    cache: false
+
+# SonarCloud Configuration
+sonarcloud:
+  base-url: https://sonarcloud.io/api
+  token: ${SONARCLOUD_TOKEN:08d278c00054753e6029c2233643e212a7fbfb54}
+  organization: ${SONARCLOUD_ORG:commerceiq}
+
+  # Product to Project Mapping
+  products:
+    omni:
+      name: "omni"
+      projects:
+        - "commerceiq_omni-esm-epos-ingestion-workflow"
+        - "commerceiq_async-tasks-worker"
+        - "commerceiq_async-tasks-worker-python"
+        - "commerceiq_omni-edm-workflow"
+        - "commerceiq_omni-api-service"
+        - "commerceiq_omni-rca"
+        - "commerceiq_omni-workflows_content-efficacy-category"
+        - "commerceiq_omni-workflows_content-efficacy-input"
+        - "commerceiq_omni-workflows_media-recommendations"
+        - "commerceiq_omni-workflows_media-recommendations-optimisation"
+        - "commerceiq_omni-workflows_content-efficacy-recommendations"
+        - "commerceiq_omni-workflows_aramus-competition"
+        - "commerceiq_omni-workflows_availability-recommendations"
+        - "commerceiq_omni-workflows_content-efficacy-output-summary"
+        - "commerceiq_omni-workflows_content-recommendations"
+        - "commerceiq_omni-workflows_dsa-measurescore-generator"
+        - "commerceiq_omni-workflows_plan-aggregator"
+        - "commerceiq_omni-workflows_update-plan-transposed"
+        - "commerceiq_omni-plan-decompose-workflow"
+        - "commerceiq_omni-key-contributor"
+        - "commerceiq_omni-content-efficacy"
+        - "commerceiq_ciq-mvc-lib"
+
+    bi-platform:
+      name: "BI Platform"
+      projects:
+        - "commerceiq_ciq-configservice"
+        - "commerceiq_brands-service"
+        - "commerceiq_ciq-dashboards_dashboard-common"
+        - "commerceiq_ciq-dashboards_dashboard-service"
+        - "com.commerceiq.ai:data-extractor"
+        - "commerceiq_ciq-dashboards_sdp-workflow"
+
+
+# Snyk Configuration
+snyk:
+  base-url: https://api.snyk.io
+  token: ${SNYK_TOKEN:f9fab0d6-413b-439c-8673-38ec709a410a}
+  organization: ${SNYK_ORG:240e61d6-487d-4d0d-af5c-0c0bc1ce57a0}
+  api-version: 2024-06-21
+
+  # Product to Tag Mapping
+  products:
+    omni:
+      name: "omni"
+      tag: "product:omni"
+    bi-platform:
+      name: "BI Platform"
+      tag: "product:bi-platform"
+
+# Server Configuration
+server:
+  port: 8080
+
+# Logging
+logging:
+  level:
+    com.compliance: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
